@@ -12,7 +12,7 @@ x=0
 for x in range(len(nueva_palabra[0])):
     if "/" in nueva_palabra[0][x]:
         nueva_palabra[0][x]=nueva_palabra[0][x].split(" / ")
-print(nueva_palabra[0][0])
+print(len(nueva_palabra[0]))
 x=0
 y=0
 s=0
@@ -20,29 +20,14 @@ z=0
 palabras = {}
 palabras['id']=z
 palabras['sininimos'] = []
-for x in range(len(nueva_palabra)):
-    if x==0:
-        for y in range(len(nueva_palabra[x])): 
-                if y==0:
-                	if type(nueva_palabra[x][y]) is list:
-                		palabras['palabra'] = nueva_palabra[x][y][0]
-                		palabras['sininimos'].insert(len(palabras['sininimos']),nueva_palabra[x][y])
-                	else:
-                		palabras['palabra'] = nueva_palabra[x][y]
-                	if type(nueva_palabra[x][y]) is list:
-                		for s in range(len(nueva_palabra[x][y])):
-                			palabras['sininimos'].insert(len(palabras['sininimos']),nueva_palabra[x][y][s])
-                			s+=1
-                else:
-                	if type(nueva_palabra[x][y]) is list:
-                		for s in range(len(nueva_palabra[x][y])):
-                			palabras['sininimos'].insert(len(palabras['sininimos']),nueva_palabra[x][y][s])
-                			s+=1               	
-    elif x==1:
-        for y in range(len(nueva_palabra[x])): 
-                palabras['definicion#'+str(y+1)] = str(nueva_palabra[x][y])
-z+=1
-print(palabras)
+#for x in range(len(nueva_palabra)):
+#    if x==0:
+#        if len(nueva_palabra[x])              	
+#    elif x==1:
+#        for y in range(len(nueva_palabra[x])): 
+#                palabras['definicion#'+str(y+1)] = str(nueva_palabra[x][y])
+#z+=1
+#print(palabras)
 
 
 #pprint.pprint(diccionario)
