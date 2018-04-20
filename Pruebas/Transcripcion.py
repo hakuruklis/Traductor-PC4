@@ -13,10 +13,10 @@ diccionario=[]
 palabras = {}
 
 z=0
-for z in range(1086):
+for z in range(1830):
 	palabras['id']=z
 	palabras['palabra']=''
-	palabras['sininimos'] = []
+	palabras['sinonimos'] = []
 	palabras['definicion']=[]
 	palabra=ws['A'+str(z+1)].value
 	try:
@@ -33,7 +33,7 @@ for z in range(1086):
 				if y == 0:
 					palabras['palabra']=nueva_palabra[0][0]
 				else:
-					palabras['sininimos'].append(nueva_palabra[0][y])
+					palabras['sinonimos'].append(nueva_palabra[0][y])
 				y+=1
 		elif x==1:
 			y=0
@@ -45,7 +45,7 @@ for z in range(1086):
 	diccionario.append(palabrass)
 	
 
-pprint.pprint(diccionario)
+#pprint.pprint(diccionario)
 #print(palabras)
 
 
