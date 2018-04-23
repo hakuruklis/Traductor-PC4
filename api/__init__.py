@@ -1,5 +1,4 @@
-from flask import Flask, request, jsonify
-import json, pprint
+from flask import Flask, request, jsonify, json
 app = Flask(__name__)
 
 json_data=open("../Pruebas/palabras.json").read()
@@ -12,4 +11,4 @@ def get_tareas():
         return jsonify(data)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port="8000")

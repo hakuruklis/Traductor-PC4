@@ -6,7 +6,7 @@ data = json.loads(json_data)
 
 def buscar_palabra(palabra):
 	#json_data=open("palabras.json").read()
-#	data = json.loads(json_data)
+	#data = json.loads(json_data)
 	response = requests.request("GET", "http://127.0.0.1:5000/diccionarioguna/api/v1.0/palabras")
 	data = json.loads(response.text)
 	x=0
@@ -33,8 +33,7 @@ def buscar_palabra(palabra):
 	for y in definicones:
 		print('- '+y)
 
-		
 
-palabra = "wardummad"	
+
+palabra = "wardummad"
 print (buscar_palabra(palabra))
-
