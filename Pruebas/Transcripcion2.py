@@ -13,16 +13,14 @@ diccionario=[]
 palabras = {}
 
 z=0
-for z in range(1830):
+for z in range(1778):
 	palabras['id']=z
 	palabras['palabra']=''
-	palabras['sinonimos'] = []
 	palabras['definicion']=[]
 	palabra=ws['A'+str(z+1)].value
 	try:
 		nueva_palabra=palabra.split(". ")
-		nueva_palabra[0]=nueva_palabra[0].split(" | ")
-		nueva_palabra[1]=nueva_palabra[1].split(", ")
+		nueva_palabra[1]=nueva_palabra[1].split(" | ")
 	except:
 		print(str(z+1) + "No agregado")
 	x=0
@@ -31,23 +29,21 @@ for z in range(1830):
 		if x == 0:
 			for y in range(len(nueva_palabra[0])):
 				if y == 0:
-					palabras['palabra']=nueva_palabra[0][0]
-				else:
-					palabras['sinonimos'].append(nueva_palabra[0][y])
+					palabras['palabra']=nueva_palabra[0]
 				y+=1
 		elif x==1:
 			y=0
 			for y in range(len(nueva_palabra[1])):
-					palabras['definicion'].append(nueva_palabra[1][y])
+				palabras['definicion'].append(nueva_palabra[1][y])
 	#print(palabras)
 	palabrass = copy.deepcopy(palabras)
 	z+=1
 	diccionario.append(palabrass)
 
 
-#pprint.pprint(diccionario)
+pprint.pprint(diccionario)
 #print(palabras)
 
 
-with open('palabras.json', 'w') as outfile:
+with open('guna.json', 'w') as outfile:
     json.dump(diccionario, outfile)

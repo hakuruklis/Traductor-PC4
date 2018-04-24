@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/buscar_palabra" method="post">
+        <p><input id="txt" type="text" name="palabra"/></p>
+        <p><input id="boton" type="submit" value="Buscar Palabra"></p>
+        {% with mensajes = get_flashed_messages() %}
+          {% if mensajes %}
+            <ul>
+              {% for mensaje in mensajes %}
+              <li>{{ mensaje }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+
+
+        {% if s|length > 0 %}
+          <h1>Sinonimos</h1>
+          {% for sinonimos in s %}
+          <ul>{{ sinonimos }}</ul>
+          {% endfor %}
+        {% endif %}
+
+        {% if d|length > 0 %}
+          <h1>Definiciones</h1>
+          {% for definicones in d %}
+          <ul>{{ definicones }}</ul>
+          {% endfor %}
+        {% endif %}
+
+
+    </form>
+  </body>
+</html>

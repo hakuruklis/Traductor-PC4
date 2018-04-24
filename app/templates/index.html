@@ -1,41 +1,107 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Traductor Guna-Español</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-    <form action="/buscar_palabra" method="post">
-        <p><input id="txt" type="text" name="palabra"/></p>
-        <p><input id="boton" type="submit" value="Buscar Palabra"></p>
-        {% with mensajes = get_flashed_messages() %}
-          {% if mensajes %}
-            <ul>
-              {% for mensaje in mensajes %}
-              <li>{{ mensaje }}</li>
+
+    <header>
+      <!-- <div class="contenedor"> -->
+        <div class="logo">
+          <img src="static/img/generatedtext.png" alt="logo traductor">
+          <img src="static/img/logo2.png" alt="logo traductor">
+        </div>
+      <!--</div> -->
+    </header> <!-- .header -->
+
+    <div class="navegacion">
+      <nav>
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="contenido contenedor">
+      <main>
+
+
+        <form action="/buscar_palabra" class="form-wrapper cf" method="post">
+            <p><input id="txt" type="text" name="palabra" placeholder="  Ingresa una palabra..." /></p>
+            <p><input class="button" id="boton" type="submit" value="Buscar Palabra"></p>
+            <p><input type="radio" name="idioma" value="guna"> Guna a Español</p>
+            <p><input type="radio" name="idioma" value="espanol"> Español a Guna</p>
+        </form>
+        <div class="respuesta">
+            {% with mensajes = get_flashed_messages() %}
+              {% if mensajes %}
+                <ul>
+                  {% for mensaje in mensajes %}
+                  <li>{{ mensaje }}</li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            {% endwith %}
+
+
+
+
+            {% if s|length > 0 %}
+              <h1>Sinonimos</h1>
+              {% for sinonimos in s %}
+              <ul>{{ sinonimos }}</ul>
               {% endfor %}
+            {% endif %}
+
+            {% if d|length > 0 %}
+              <h1>Definiciones</h1>
+              {% for definicones in d %}
+              <ul>{{ definicones }}</ul>
+              {% endfor %}
+            {% endif %}
+          </div>
+
+      </main>
+
+      <aside class="sidebar">
+        <h2>Otros posts</h2>
+        <ul>
+          <li><a href="#">Conoce Guna Yala</a></li>
+          <li><a href="#">Entrada 2</a></li>
+          <li><a href="#">Entrada 3</a></li>
+          <li><a href="#">Entrada 4</a></li>
+          <li><a href="#">Entrada 5</a></li>
+        </ul>
+      </aside>
+    </div> <!-- .contenido -->
+
+    <footer>
+      <div class="contenedor">
+        <div class="nosotros">
+          <h2>Sobre Nosotros</h2>
+          <p>Traductor de el dialecto Guna a Español, proyecto ded final de programacion 4 UIP</p>
+        </div><!-- .nosotros -->
+        <div class="menu">
+          <nav>
+            <ul>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#">Nosotros</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Tienda</a></li>
+              <li><a href="#">Contacto</a></li>
             </ul>
-          {% endif %}
-        {% endwith %}
+          </nav>
+        </div><!-- .menu -->
+    </div><!-- .contenedor -->
+    <p class="copyright">
+      Todos los derechos reservados &copy;. Traductor Guna 2018
+    </p>
+    </footer><!-- .footer -->
 
-
-
-
-        {% if s|length > 0 %}
-          <h1>Sinonimos</h1>
-          {% for sinonimos in s %}
-          <ul>{{ sinonimos }}</ul>
-          {% endfor %}
-        {% endif %}
-
-        {% if d|length > 0 %}
-          <h1>Definiciones</h1>
-          {% for definicones in d %}
-          <ul>{{ definicones }}</ul>
-          {% endfor %}
-        {% endif %}
-
-        
-    </form>
   </body>
 </html>

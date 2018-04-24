@@ -1,0 +1,230 @@
+html{
+  box-sizing: border-box;
+}
+*, *::before,*:after{
+  box-sizing: inherit;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: verdana, geneva, serif;
+}
+header{
+  background: url(http://www.hotelroomsearch.net/im/hotels/gr/panorama-beach-3.jpg) 100% 100% no-repeat;
+  padding: 20px 0;
+  background-repeat: no-repeat;
+}
+div.contenedor{
+  width: 1200px;
+  margin: 0 auto;
+}
+/**Navegacion**/
+.navegacion{
+  background-color: #db008d;
+}
+nav{
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+nav ul{
+  list-style: none;
+}
+nav > ul > li{
+  float: left;
+}
+nav ul::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+nav ul li a{
+  display: inline-block;
+  width: 200px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 20px;
+}
+nav ul li a:hover{
+  background-color: #00d8e4;
+}
+/**Segundo nivel**/
+nav ul ul{
+  position: absolute;
+  top: 100%;
+  background-color: rgba(0,184,228,0.7);
+  display: none;
+}
+nav ul li:hover > ul{
+  display: block;
+}
+nav ul li:hover{
+  background-color: rgba(0,184,228,1);
+}
+/**Contenido Principal**/
+div.contenido::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+main{
+  width: 70%;
+  float: left;
+  padding-right: 40px;
+}
+/**Entradas del post**/
+article{
+  margin-top: 30px;
+}
+h2{
+  color: #00b8e4;
+  margin-bottom: 20px;
+}
+article p{
+  line-height: 2;
+  text-align: justify;
+}
+.boton{
+  background-color: #00b8e4;
+  padding: 10px 30px;
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/**sidebar**/
+aside{
+  float: right;
+  width: 30%;
+  margin-top: 30px;
+}
+aside ul{
+  list-style: none;
+}
+aside ul li{
+  padding: 10px 0 10px 10px;
+}
+aside ul li:hover{
+  background-color: #00b8e4;
+  cursor: pointer;
+}
+aside ul li a{
+  color:#00b8e4;
+  text-decoration: none;
+}
+aside ul li:hover a{
+  color:#ffffff;
+}
+/**footer**/
+footer{
+  background-color: #dd008d;
+  margin-top: 40px;
+  padding-top: 30px;
+}
+footer .contenedor::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+footer h2{
+  color: #ffffff;
+}
+footer div.nosotros{
+  float: left;
+  width: 30%;
+  color: #ffffff;
+}
+footer div.menu{
+  float: right;
+  width: 40%;
+  text-align: right;
+}
+footer nav{
+  width: auto;
+}
+footer nav ul li a{
+  width: auto;
+}
+p.copyright{
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+/**Logo**/
+div.logo{
+  width: 100px;
+}
+
+form{
+  margin-top: 50px;
+
+}
+#txt{
+  width: 500px;
+  height: 60px;
+  border-radius: 17px;
+}
+img{
+  border-radius: 15px;
+  width: 500px;
+}
+.logo{
+  margin: 50px 0;
+}
+
+
+
+/*Boton*/
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.respuesta{
+  font-family: 'Open Sans', sans-serif;
+}
+.respuesta h1{
+  font-size: 16px:
+}
+.respuesta li{
+  font-size: 12px;
+}
